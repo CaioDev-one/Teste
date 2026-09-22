@@ -1,0 +1,29 @@
+name: Meu primeiro CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  Compilar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fazer git Clone
+        uses: actions/checkout@v4
+
+      - name: Hello World
+        run: echo "hello, world!"
+
+      - name: Java
+        run: echo "Java!"
+
+      - name: Executando dois
+        run: |
+          ls -l
+          echo "Fim do processo"
+     
+      
+     
