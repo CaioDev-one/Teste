@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplo com JSON</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .produto {
+      padding: 12px 0;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Produtos</h1>
+    <div id="lista">Carregando...</div>
+  </div>
+
+  <script>
+    fetch('./data.json')
+      .then(response => response.json())
+      .then(data => {
+        const lista = document.getElementById('lista');
+        lista.innerHTML = '';
+
+        data.produtos.forEach(produto => {
+          const item = document.createElement('div');
+          item.className = 'produto';
+          item.innerHTML = `
+            <strong>${produto.nome}</strong><br>
+            Preço: R$ ${produto.preco.toFixed(2)}<br>
+            Estoque: ${produto.estoque}
+          `;
+          lista.appendChild(item);
+        });
+      })
+      .catch(error => {
+        document.getElementById('lista').textContent = 'Erro ao carregar os dados.';
+        console.error(error);
+      });
+  </script>
+</body>
+</html>

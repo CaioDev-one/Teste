@@ -1,0 +1,12 @@
+app:
+  nome: Loja Exemplo
+  versao: "1.0.0"
+  ambiente: desenvolvimento
+
+servidor:
+  host: localhost
+  porta: 8080
+
+dados:
+  arquivo: data.json
+  cache: false

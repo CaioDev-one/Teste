@@ -1,0 +1,23 @@
+{
+  "loja": "Loja Exemplo",
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Produto A",
+      "preco": 29.9,
+      "estoque": 12
+    },
+    {
+      "id": 2,
+      "nome": "Produto B",
+      "preco": 49.9,
+      "estoque": 7
+    },
+    {
+      "id": 3,
+      "nome": "Produto C",
+      "preco": 19.9,
+      "estoque": 20
+    }
+  ]
+}
