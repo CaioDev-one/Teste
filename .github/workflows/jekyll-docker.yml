@@ -40,6 +40,6 @@ jobs:
   with:
    file: dockerfile
    push: true
-   tags: caiodevone/minha-api:1.0
+   tags: caiodevone/gui-2faixa:1.0
 
 
